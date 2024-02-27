@@ -1,0 +1,80 @@
+@import "../../main.global";
+
+.partners{
+  padding: 16px 0;
+
+  &__container{
+    align-items: center;
+    gap: 6px;
+
+    @media (max-width:(1200px)) {
+      justify-content: space-between;
+    }
+    @media (max-width:(768px)) {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+  }
+
+  &__list{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    @media (max-width:(1200px)) {
+      gap: 6px;
+      justify-content: space-between;
+    }
+    @media (max-width:(768px)) {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+  }
+  &__logo{
+    @media (max-width:(1200px)) {
+      width: 130px;
+    }
+  }
+
+  &__title{
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 16px;
+    letter-spacing: 0.5px;
+    color: $text-color;
+  }
+
+  &__link{
+    &:focus-visible{
+      outline: solid 1px $orange;
+      outline-offset: 3px;
+    }
+
+  }
+
+  &__more{
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 16px;
+    letter-spacing: 0.5px;
+    color: $text-color;
+    transition: color 0.3s ease-in-out;
+
+    &:focus{
+      outline: none;
+    }
+
+    &:hover:not(:focus-visible){
+      color: $blue;
+    }
+    &:focus-visible{
+      outline: solid 1px $orange;
+      outline-offset: 3px;
+    }
+    &:active:not(:focus-visible){
+      color: $orange;
+    }
+  }
+
+}

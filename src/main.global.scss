@@ -1,0 +1,125 @@
+@import "normalize.module";
+@import "vars.module";
+
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+body{
+    margin: 0;
+    font-family: $font-family;
+    overflow-anchor: none;
+    background-color: $white;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+*:focus-visible {
+    outline: 0;
+}
+
+.isHidden {
+    display: none !important; /* stylelint-disable-line declaration-no-important */
+}
+
+
+
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+.container{
+    margin: 0 auto;
+    padding: 0 $container-offset;
+    max-width: $container-width;
+
+}
+.visuallyHidden {
+    position: absolute;
+    overflow: hidden;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    width: 1px;
+    height: 1px;
+    clip: rect(0 0 0 0);
+}
+
+
+.flex{
+    display: flex;
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: $offset;
+
+    @media (max-width:(320px)) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 1px solid $white;
+    border-radius: 80px;
+    padding: 17px 33px;
+    color: $white;
+    font-weight: 400;
+    font-size: $main-size;
+    line-height: 20px;
+    letter-spacing: 0.02px;
+    transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    cursor: pointer;
+
+    &:focus{
+        outline: none;
+    }
+
+    &:hover:not(:focus-visible){
+        border-color: $blue;
+        background-color: $blue;
+    }
+    &:focus-visible{
+        background-color: $orange;
+    }
+    &:active:not(:focus-visible){
+        border-color: $orange;
+        background-color: $orange;
+    }
+}
+

@@ -1,0 +1,53 @@
+@import "../../main.global";
+
+.information{
+
+    &__container{
+
+    }
+
+  &__title{
+    max-width: 80%;
+    font-family: $second-family;
+    font-weight: 400;
+    font-size: 31px;
+    line-height: 38px;
+    letter-spacing: 1.2px;
+    color: $black;
+  }
+
+  &__left{
+    grid-column: 6 span;
+  }
+
+  &__right{
+    grid-column: 6 span;
+  }
+
+  &__list{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 48px;
+    row-gap: 36px;
+  }
+
+  &__item{
+    grid-column: 3 span;
+    align-items: flex-start;
+  }
+
+  &__subTitle{
+    margin-bottom: 4px;
+    font-weight: 400;
+    font-size: $second-size;
+    line-height: 24px;
+    color: $black;
+  }
+
+  &__descr{
+    font-weight: 400;
+    font-size: $second-size;
+    line-height: 24px;
+    color: rgba(53, 83, 98, 0.8);
+  }
+}

@@ -1,0 +1,149 @@
+@import "../../main.global";
+.header{
+  padding: 17px 0;
+  &__container{
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__position{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+  }
+}
+.nav{
+  align-items: center;
+  padding-right: 16px;
+
+  @media (max-width: (768px)) {
+    position: fixed;
+    width: 80%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    padding: $offset;
+    overflow-y: auto;
+    background-color: #001F1F;
+    z-index: 99;
+    transform: translateX(-100%);
+    transition: transform 0.4s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 51px;
+
+    &__active {
+      transform: none;
+      left: 0;
+    }
+  }
+
+  &__list{
+    align-items: center;
+    margin-right: 32px;
+    gap: 51px;
+
+    @media (max-width: (768px)) {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-right: 0;
+
+    }
+  }
+
+  &__link{
+    font-size: $main-size;
+    color: $white;
+    transition: color 0.3s ease-in-out;
+
+    &:focus{
+      outline: none;
+    }
+
+    &:hover:not(:focus-visible){
+      color: $blue;
+    }
+    &:focus-visible{
+      outline: solid 1px $orange;
+      outline-offset: 3px;
+    }
+    &:active:not(:focus-visible){
+      color: $orange;
+    }
+
+
+  }
+}
+.burger {
+  display: none;
+  @media (max-width: (768px)) {
+    display: block;
+  }
+  --burger-width: 30px;
+  --burger-height: 22px;
+  --burger-line-height: 2px;
+
+  position: relative;
+  border: none;
+  padding: 0;
+  width: var(--burger-width);
+  height: var(--burger-height);
+  z-index: 100;
+  color: $white;
+  background-color: transparent;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: var(--burger-line-height);
+    background-color: currentColor;
+    transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    top: calc(100% - var(--burger-line-height));
+  }
+
+  &__line {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: var(--burger-line-height);
+    background-color: currentColor;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease-in-out;
+  }
+  &__active {
+    &::before {
+      top: 50%;
+      transform: rotate(45deg);
+      transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+    }
+
+    &::after {
+      top: 50%;
+      transform: rotate(-45deg);
+      transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+    }
+
+    .burger__line {
+      transform: scale(0);
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+  @media (max-width: 768px) {
+    display: block;
+  }
+
+}

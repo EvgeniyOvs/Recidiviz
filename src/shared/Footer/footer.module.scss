@@ -1,0 +1,162 @@
+@import "../../main.global";
+
+.footer{
+
+  &__container{
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width:(320px)) {
+      flex-direction: column;
+    }
+  }
+
+  &__logo{
+    @media (max-width:(320px)) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__top{
+    padding-top: 112px;
+    padding-bottom: 137px;
+    background-color: #001414;
+
+    @media (max-width:(320px)) {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+    .container{
+      @media (max-width:(320px)) {
+        row-gap: $offset;
+      }
+    }
+  }
+
+  &__column{
+    grid-column: 2 span;
+
+    &:last-child{
+      grid-column: 11 / 2 span;
+
+      @media (max-width:(320px)) {
+        grid-column: 2 span;
+      }
+    }
+  }
+
+  &__title{
+    position: relative;
+    margin-bottom: 23px;
+    padding-bottom: 24px;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 16px;
+    letter-spacing: 1px;
+    color: #7D9798;
+
+    &:after{
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 16px;
+      height: 1px;
+      background-color: #25B895;
+    }
+
+  }
+
+  &__link{
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 16px;
+    color: #EDECEB;
+    transition: color 0.3s ease-in-out;
+
+    &:focus{
+      outline: none;
+    }
+
+    &:hover:not(:focus-visible){
+      color: $blue;
+    }
+    &:focus-visible{
+      outline: solid 1px $orange;
+      outline-offset: 3px;
+    }
+    &:active:not(:focus-visible){
+      color: $orange;
+    }
+  }
+
+  &__bottom{
+    padding-top: 40px;
+    padding-bottom: 63px;
+    background-color: #000F0F;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__text{
+
+    &__bottom{
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__copy{
+    font-weight: 400;
+    font-size: 9px;
+    line-height: 10px;
+    color: #E5ECEC;
+  }
+
+  &__rights{
+    font-weight: 400;
+    font-size: 9px;
+    line-height: 10px;
+    color: #E5ECEC;
+  }
+
+  &__subList{
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    @media (max-width:(320px)) {
+      flex-direction: column;
+      margin-bottom: 20px;
+    }
+
+    &__link{
+      font-weight: 400;
+      font-size: 9px;
+      line-height: 10px;
+      color: #E5ECEC;
+      transition: color 0.3s ease-in-out;
+
+      &:focus{
+        outline: none;
+      }
+
+      &:hover:not(:focus-visible){
+
+        color: $blue;
+      }
+      &:focus-visible{
+        &:after{
+          outline: solid 1px $orange;
+          outline-offset: 3px;
+        }
+      }
+      &:active:not(:focus-visible){
+        color: $orange;
+      }
+    }
+  }
+
+}
